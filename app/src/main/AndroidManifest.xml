@@ -20,12 +20,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:theme="@style/AppTheme.NoActionBar"
-            android:name=".presentation.ui.MainActivity"
-            android:exported="false">
-        </activity>
-
     </application>
 
 </manifest>

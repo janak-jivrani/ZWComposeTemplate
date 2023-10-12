@@ -14,26 +14,24 @@ import coil.ImageLoader
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
 import coil.disk.DiskCache
-import com.example.gffcompose.utils.SerializeNulls
+import com.zw.zwbase.core.SerializeNulls
 import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.zw.zwbase.BuildConfig
-import com.zw.zwbase.core.NetworkConfig
+import com.zw.zwbase.core.Constant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import timber.log.Timber
 import java.util.*
-import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
 
@@ -48,7 +46,6 @@ object NetworkModule {
     const val DEFAULT_OKHTTP_CLIENT = "DEFAULT_OKHTTP_CLIENT"
     const val COUNTRY_RETROFIT = "COUNTRY_RETROFIT"
 
-    const val BASE_URL = "base_url"
 
     @Provides
     @Singleton
@@ -148,7 +145,7 @@ object NetworkModule {
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(CoroutinesResponseCallAdapterFactory())
-            .baseUrl(BASE_URL/*baseUrlStorage.getBaseUrl()*/)
+            .baseUrl(Constant.BASE_URL/*baseUrlStorage.getBaseUrl()*/)
             .build()
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -164,7 +161,7 @@ object NetworkModule {
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(CoroutinesResponseCallAdapterFactory())
-            .baseUrl(BASE_URL/*baseUrlStorage.getBaseUrl()*/)
+            .baseUrl(Constant.BASE_URL/*baseUrlStorage.getBaseUrl()*/)
             .build()
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -190,7 +187,7 @@ object NetworkModule {
         Retrofit.Builder()
             .client(okHttpClient)
             .addCallAdapterFactory(CoroutinesResponseCallAdapterFactory())
-            .baseUrl(BASE_URL/*BuildConfig.BASE_URL*/)
+            .baseUrl(Constant.BASE_URL/*BuildConfig.BASE_URL*/)
             .build()
 
     /*@Provides

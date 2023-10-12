@@ -1,3 +1,7 @@
+/*
+ * Copyright © 2023 Zetrixweb. All rights reserved.
+ * Modify this class as per your requirement
+ */
 package com.zw.zwbase.core
 
 import android.content.Context

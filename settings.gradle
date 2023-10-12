@@ -17,3 +17,4 @@ rootProject.name = "ZWComposeTemplate"
 include ':app'
 include ':appdrawer'
 include ':ZwBase'
+include ':bottomnavigation'

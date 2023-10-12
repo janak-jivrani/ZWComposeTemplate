@@ -1,11 +1,8 @@
 /*
- * Copyright © 2022 GFF. All rights reserved.
- *
- * Android Compose Template
- *
- * Created by GFF developers.
+ * Copyright © 2023 Zetrixweb. All rights reserved.
+ * Modify this class as per your requirement
  */
-package com.example.gffcompose.utils
+package com.zw.zwbase.core
 
 import androidx.annotation.Nullable
 import com.squareup.moshi.JsonAdapter

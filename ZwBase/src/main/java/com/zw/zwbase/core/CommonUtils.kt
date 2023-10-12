@@ -55,7 +55,10 @@ import java.security.SecureRandom
 import java.text.*
 import java.util.*
 import java.util.regex.Pattern
-
+/*
+ * Copyright © 2023 Zetrixweb. All rights reserved.
+ * Modify this class as per your requirement
+ */
 object CommonUtils {
     val MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123
     val alert: AlertDialog? = null

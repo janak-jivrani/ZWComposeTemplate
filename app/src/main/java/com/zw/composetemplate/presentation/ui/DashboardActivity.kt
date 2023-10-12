@@ -9,9 +9,11 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
+
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,6 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.bharadwaj.navigationbarmedium.MainActivity
 import com.zw.composetemplate.R
 import com.zw.composetemplate.presentation.viewmodels.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -97,14 +100,13 @@ class DashboardActivity : ComponentActivity() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen() {
     val context = LocalContext.current
     Scaffold(
-        topBar = { TopAppBar(
-            title = { Text(text = stringResource(R.string.app_name), fontSize = 18.ssp) },
-            backgroundColor = colorResource(id = R.color.colorPrimary),
-            contentColor = Color.White
+        topBar = { CenterAlignedTopAppBar(
+            title = { Text(text = stringResource(R.string.app_name), fontSize = 18.ssp) }
         ) },
         content = { padding ->
             Column(modifier = Modifier.padding(padding)) {
@@ -116,6 +118,6 @@ fun DashboardScreen() {
                 }.fillMaxWidth().padding(8.sdp).padding(2.sdp), color = Color.White, fontSize = 16.ssp)
             }
         },
-        backgroundColor = colorResource(R.color.colorPrimaryDark) // Set background color to avoid the white flashing when you switch between screens
+        containerColor = colorResource(R.color.colorPrimaryDark) // Set background color to avoid the white flashing when you switch between screens
     )
 }
